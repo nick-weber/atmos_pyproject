@@ -21,6 +21,7 @@ Installing Required Packages with Conda:
 ----------------------------------------
 
 This package requires the netcdf4_ and basemap_ tools. These can be installed simply, using the Anaconda installation tool **conda**.
+
 - First, open a command prompt. Mac/Linux users simply need to open a Terminal window (i.e., launch the **Terminal** application). Windows users need to open an **Anaconda Command Prompt** (found in your applications).
 - To install **netcdf4**, simply type ``conda install netcdf4`` into the command prompt and press **Enter**.
 - To install **basemap**, try doing the same, but instead type ``conda install basemap``. Since **basemap** support is ending with Python 2, Python 3 users may have trouble installing this package. If that first command did not work, try typing ``conda install -c conda-forge basemap`` instead. If unsuccessful still, contact the instructor for assistance.
