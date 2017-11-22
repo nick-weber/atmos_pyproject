@@ -19,6 +19,7 @@ How to do the Plotting Tutorial:
 --------------------------------
 
 Here, we assume that users have installed the Anaconda Python distribution.
+
 - In order to interactively do the plotting tutorial (which is a Jupyter Notebook, stored in **plotting_tutorial.ipynb**), you will need to launch the Jupyter Notebook application
 - If you are a Mac user, you can do this by simply opening a Terminal window (look for **Terminal** in your Applications) in this project directory, then typing ``jupyter notebook`` into the command prompt.
 - Windows users do almost the same thing. Open an **Anaconda Command Prompt** (which you can find by searching your applications) and type ``jupyter notebook`` into the command prompt.
