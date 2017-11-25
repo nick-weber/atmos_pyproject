@@ -15,7 +15,12 @@ How to Download:
 Package Contents:
 -----------------
 
+- **PROJECT_INSTRUCTIONS.rst**: The instructions for the project. Click on this file on Github to read the formatted instructions page.
+- **README.rst**: This file.
 - **plotting_tutorial.ipynb**: A Jupyter notebook that serves as an introduction to using matplotlib and Basemap for making line plots, 2-D contour plots, and 2-D contour plots projected onto maps.
+- **plotting_functions.py**: Python module containing functions for plotting meteorological data. Some of the functions are not complete (skeleton code) and require the user to finish them.
+- **utilities.py**: Python module containing "utility" functions to read data, make calculations, and perform other miscellanious tasks. The ``calculate_rh()`` function is skeleton code and requires completing.
+- **data/**: A folder containing the data used in this project: a preprocessed NARR analysis netCDF, text files containing ASOS (meteorogram) data for different stations, and text files containing RAOB (sounding) data for different stations.
 
 Installing Required Packages with Conda:
 ----------------------------------------
