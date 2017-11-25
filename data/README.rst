@@ -3,12 +3,12 @@ Data Sources
 
 If additional ASOS/RAOB data is desired (e.g., if you want to look at a station that was not provided), use the embedded links to download more data and/or ask the instructor for assistance.
 
-`NCEP North American Regional Analysis (NARR) data`_:
------------------------------------------------------
+`NCEP North American Regional Analysis`_ (NARR):
+------------------------------------------------
 
 - **narr_oct2010.nc**: Contains 2-meter temperature, 10-meter wind, mean sea level pressure, and outgoing longwave radiation data.
 
-.. _NCEP North American Regional Analysis (NARR) data: ftp://ftp.cdc.noaa.gov/Datasets/NARR/monolevel/
+.. _NCEP North American Regional Analysis: ftp://ftp.cdc.noaa.gov/Datasets/NARR/monolevel/
 
 `Iowa State ASOS Archive`_:
 ---------------------------
