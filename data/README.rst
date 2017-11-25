@@ -13,20 +13,20 @@ If additional ASOS/RAOB data is desired (e.g., if you want to look at a station 
 `Iowa State ASOS Archive`_:
 ---------------------------
 
-- **CLI_asos.txt**: Cleveland, OH
-- **CXTO_asos.txt**: Toronto, Ontario
-- **GRB_asos.txt**: Green Bay, WI
-- **MSP_asos.txt**: Minneapolis / St. Paul, MN
-- **ORD_asos.txt**: Chicago, IL
+- **asos_CLI.txt**: Cleveland, OH
+- **asos_CXTO.txt**: Toronto, Ontario
+- **asos_GRB.txt**: Green Bay, WI
+- **asos_MSP.txt**: Minneapolis / St. Paul, MN
+- **asos_ORD.txt**: Chicago, IL
 
 .. _Iowa State ASOS Archive: https://mesonet.agron.iastate.edu/request/download.phtml?network=IL_ASOS 
 
 `Iowa State RAOB Archive`_:
 ---------------------------
 
-- **KGRB_soundings.txt**: Green Bay, WI
-- **KILN_soundings.txt**: Cincinnati / Dayton, OH
-- **KILX_soundings.txt**: Lincoln, IL
-- **KMPX_soundings.txt**: Chanhassen, MN
+- **soundings_KGRB.txt**: Green Bay, WI
+- **soundings_KILN.txt**: Cincinnati / Dayton, OH
+- **soundings_KILX.txt**: Lincoln, IL
+- **soundings_KMPX.txt**: Chanhassen, MN
 
 .. _Iowa State RAOB Archive: https://mesonet.agron.iastate.edu/archive/raob/
