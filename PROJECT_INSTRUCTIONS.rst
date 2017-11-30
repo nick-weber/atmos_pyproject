@@ -5,6 +5,8 @@ In this coding activity, you will be displaying meteorological data to analyze t
 
 To execute the following steps, you will need to both **a)** fill in some gaps within the code that has been provided and **b)** write your own code to call the functions within ``plotting_functions.py``. Task **a)** is fairly straightforward; you can find the "skeleton code" blocks by looking for the obnoxiously-commented ``FILL THIS BLOCK`` statements. Individual tasks are marked by commented ``# TODO:`` lines. You can accomplish task **b)** by either creating your own new module/script (e.g., ``project.py``) and importing ``plotting_functions`` or by writing code to call the functions within the ``plotting_functions.py`` module itself, in the "main" block (denoted by ``if __name__=='__main__':``).
 
+Before continuing on, it is recommended that you do the Python plotting tutorial (``plotting_tutorial.ipynb``). Instructions for how to open/run this file using Jupyter notebook can be found in ``README.rst``.
+
 .. _strong North American extratropical cyclone of October 2010: https://en.wikipedia.org/wiki/October_2010_North_American_storm_complex
 .. _NARR: https://www.esrl.noaa.gov/psd/data/gridded/data.narr.html
 
