@@ -41,7 +41,7 @@ def plot_meteorogram(stid, dt1, dt2):
     
     # TODO: create a SIX-PANEL figure and w/ axes, using plt.subplots()
     #       pro-tip: make it taller than it is wide using "figsize"
-    fig, axes = plt.subplots(nrows=6, ncols=1, figsize=(6,10))
+
     
     # TODO: plot the data onto the different axes
     # Let the dates be the x-axis values (matplotlib can handle datetimes)
@@ -51,23 +51,11 @@ def plot_meteorogram(stid, dt1, dt2):
     #   - row4 : wind speed
     #   - row5 : pressure
     #   - row6 : hourly precipitation
-    x = metdata['dates']
-    axes[0].plot(x, metdata['t'], 'r')
-    axes[0].plot(x, metdata['td'], 'b')
-    axes[1].plot(x, ut.calculate_rh(metdata['t'], metdata['td']))
-    axes[2].plot(x, metdata['wdir'])
-    axes[3].plot(x, metdata['wspd'])
-    axes[4].plot(x, metdata['pres'])
-    axes[5].plot(x, metdata['prec'])
+    
     
     # TODO: label each axis by setting its ylabel to the variable name
     #       and set the x-limits to dt1 and dt2
-    labs = ['temp [C]', 'RH [%]', 'wdir [deg]', 'wspd [kts]', 'p [hPa]',
-            '1-h pr [mm]']
-    for ax, lab in zip(axes, labs):
-        ax.set_ylabel(lab)
-        ax.grid()
-        ax.set_xlim(dt1, dt2)
+    
     
     ######################################################################
     ### END HERE #########################################################
@@ -116,25 +104,15 @@ def plot_sounding(stid, date):
     ######################################################################
     
     # TODO: create a figure and (optionally) an axis object
-    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6,8))
     
     # TODO: plot a single dry adiabat, starting from the surface temperature,
     #       with a dashed black line
-    adiabat = sounding['t'][0] - 9.81 * (sounding['z']-sounding['z'][0])/1000.
-    ax.plot(adiabat, sounding['z'], 'k--')
     
     # TODO: plot the temperature (in red) and dew point (in blue) with either
     #       height or pressure as the vertical coordinate
-    ax.plot(sounding['t'], sounding['z'], 'r')
-    ax.plot(sounding['td'], sounding['z'], 'b')
     
     # TODO: label the x and y axes, zoom in to the bottom ~14km (<150hPa) of
     #       the atmosphere, adjust the x-limits (if necessary), and draw a grid
-    ax.set_xlim(-60,30)
-    ax.set_xlabel('temperature [C]')
-    ax.set_ylabel('height [m]')
-    ax.set_ylim(0, 12000)
-    ax.grid()
     
     ######################################################################
     ### END HERE #########################################################
@@ -181,34 +159,18 @@ def plot_narr_t2m_mslp(dt1, dt2, verbose=False):
     # TODO: Choose a colormap and contour levels for temp./pressure
     #        (we will use these variables for plotting later)
     #       Contour temperature every 2C and pressure every 4hPa
-    cmap = plt.cm.jet                    # colormap for temperatures
-    tlevs = np.arange(-25., 30., 2.)     # contour levels for temperatures
-    plevs = np.arange(940., 1051., 4.)   # contour levels for pressures
     
     # TODO: Create a Basemap object to plot the data on (over North America)
-    m = Basemap(width=8000000,height=5000000,projection='lcc',
-                resolution='l',lat_1=45.,lat_2=55,lat_0=45,lon_0=-97.)
+    
     # TODO: Project lat/lon variables onto this map projection
-    x, y = m(narr['lons'], narr['lats'])
     
     # Loop through the dates and create/save a figure at each time
-    if verbose: print('Plotting t2m and mslp maps...')
-    for d, date in enumerate(narr['dates']):
-        if verbose: print('  ', date)
         
         # TODO: Create Figure and Axes objects
-        fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(10,6))
-        # adjust the axis that we've just made to make room for a colorbar axis
-        # (which we will make later) to its right
-        fig.subplots_adjust(left=0.05, right=0.90, bottom=0.05, top=0.92)
         
         # TODO: Contour-fill the temperatures (using the colormap and levels
         #       defined above) and solid-contour the pressures in black (also
         #       using pre-defined levels)
-        cs1 = ax.contourf(x, y, narr['t2m'][d,:,:], levels=tlevs, cmap=cmap, 
-                          extend='both', antialiasing=True)
-        cs2 = ax.contour(x, y, narr['mslp'][d,:,:], levels=plevs, colors='k', 
-                         antialiasing=True)
         
         # Freebie: plot wind barbs in black (I coarsen the grid by a factor 
         # of 8, otherwise the barbs will be FAR too densely packed)
@@ -217,19 +179,8 @@ def plot_narr_t2m_mslp(dt1, dt2, verbose=False):
                 flagcolor='k', linewidth=0.5)
         
         # TODO: Draw the map (coast/country/state lines and lat/lon lines)
-        m.drawcoastlines(color='k')
-        m.drawcountries(color='k')
-        m.drawstates(color='k')
-        m.drawparallels(np.arange(0.,81,10.), dashes=[2,1], labels=[1,0,0,0])
-        m.drawmeridians(np.arange(0.,360,20.), dashes=[2,1], labels=[0,0,0,1])
         
         # TODO: Add a colorbar and (optionally) contour labels (using clabel())
-        # make a new axis object for our colorbar
-        cax = fig.add_axes([0.92, 0.05, 0.02, 0.87]) # [left, bottom, width, height]
-        # assign the data from our contour-fills to this colorba
-        plt.colorbar(cs1, cax=cax, ticks=tlevs)
-        # label the pressure contours every other pressure level ("::2")
-        plt.clabel(cs2, plevs[::2], fmt='%d')
         
         ##################################################################
         ### END HERE #####################################################
