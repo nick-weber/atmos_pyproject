@@ -165,7 +165,7 @@ def plot_narr_t2m_mslp(dt1, dt2, verbose=False):
     # TODO: Project lat/lon variables onto this map projection
     
     # Loop through the dates and create/save a figure at each time
-        
+    
         # TODO: Create Figure and Axes objects
         
         # TODO: Contour-fill the temperatures (using the colormap and levels
@@ -294,10 +294,4 @@ def plot_narr_olr(dt1, dt2, verbose=False):
 # as a script! FEEL FREE TO ADD CODE FOR TESTING.
 if __name__ == '__main__':
     print('Currently, this script does nothing!')
-    plot_meteorogram('ORD', datetime(2010, 10, 26, 0), 
-                               datetime(2010, 10, 28, 0))
-#    plot_sounding('KGRB', datetime(2010, 10, 27, 6))
-#    dt1 = datetime(2010, 10, 25, 0)
-#    dt2 = datetime(2010, 10, 29, 0)
-#    plot_narr_olr(dt1, dt2, verbose=True)
         

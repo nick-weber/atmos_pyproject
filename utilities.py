@@ -230,7 +230,5 @@ def get_figdir():
 # as a script! FEEL FREE TO ADD CODE FOR TESTING.
 if __name__ == '__main__':
     print('Currently, this script does nothing!')
-    datadict = get_meteorogram('ORD', datetime(2010, 10, 26, 0), 
-                               datetime(2010, 10, 28, 0))
   
     
